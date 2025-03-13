@@ -181,7 +181,7 @@ repos:
         types: [file]
 
   - repo: https://github.com/bridgecrewio/checkov
-    rev: 3.2.372  # Use the latest version
+    rev: 3.2.373  # Use the latest version
     hooks:
     - id: checkov
       name: Checkov Security Scanner
@@ -223,6 +223,14 @@ repos:
         language: system
         types: [text]
         files: \.html$
+
+  - repo: local
+    hooks:
+      - id: checkstyle
+        name: Checkstyle Java Linter
+        entry: checkstyle -c checkstyle.xml
+        language: system
+        files: \.java$
 
   - repo: https://github.com/bridgecrewio/checkov
     rev: "3.2.372"  # Use a stable version for production
